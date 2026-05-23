@@ -1,707 +1,285 @@
 <!DOCTYPE html>
-<html>
-
- <head>
-<meta charset="utf-8">
-<title>Akani BEE Ratings - Together We Build </title>
+<html lang="en">
+<head>
+<?php include 'includes/head.php'; ?>
+<title>Akani BEE Ratings - Together We Build</title>
 <meta name="description" content="Akani Bee Ratings offers comprehensive B-BBEE Verifications, Evidence Collation, and BEE Training and Insights to help businesses with new certifications, renewals, and understanding the dynamics around BEE.">
 <meta name="keywords" content="B-BBEE Verifications, Evidence Collation, BEE Training, BEE Insights, Gap Analysis, B-BBEE Certification, B-BBEE Renewals, Transformative Solutions, BEE Podcasts">
-<meta name="author" content="Akani BEE Ratings">
-	 <meta name="robots" content="index, follow">
-
-
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/revolution-slider.css" rel="stylesheet">
-<link href="css/jquery-ui.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-	 
-	 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link href="css/responsive.css" rel="stylesheet">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
+<body class="bg-white text-secondary antialiased">
 
-<body>
+<?php include 'includes/header.php'; ?>
 
-	   
-	 
-	
-<div class="page-wrapper">
- 	
-    <!-- Preloader -->
-  	
-    <!-- Main Header / Header Style One-->
-    <header class="main-header header-style-one">
-    	<!-- Header Top One-->
-    	<div class="header-top-one">
-        	<div class="auto-container">
-            	<div class="clearfix">
-                    
-                    <!--Top Left-->
-                    <div class="top-left top-links">
-                    	<ul class="clearfix">
-                          &nbsp;&nbsp;&nbsp;   <li><a href="twitter.com/"><i class="fab fa-twitter-square"></i></a></li>
-                            <li><a href="linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    
-                    <!--Top Right-->
-                    <div class="top-right top-links">
-                    	<ul class="clearfix">
-                        	<li><a href="mailto:info@akanibee.co.za"><i class="fas fa-envelope"></i> &nbsp; info@akanibee.co.za</a></li>
-                            <li><a href="tel:+27 83 459 1583 "><span class="icon fa fa-phone"></span> +27 83 459 1583 </a></li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                
+<!-- Hero Slider Section -->
+<section x-data="{ current: 0, slides: [
+  { image: 'images/main-slider/2.png', title: 'Accelerate Your Growth', highlight: 'With B-BBEE Verifications', text: 'Enhance your business\' competitive edge with comprehensive B-BBEE verifications. Our tailored approach suits businesses of all sizes, ensuring optimal strategies for your financial year\'s achievements.' },
+  { image: 'images/main-slider/3.png', title: 'Enhance Your Strategy', highlight: 'With Evidence Collation', text: 'Maximize your B-BBEE scorecard through expert guidance in evidence collation. Let us simplify the submission process for your verification audit, focusing on strategic compliance and performance.' },
+  { image: 'images/main-slider/1.png', title: 'Strategize for the Future', highlight: 'With Our Gap Analysis', text: 'Enhance your strategy with our gap analysis, focusing on Enterprise and Supplier Development. We guide you through essential improvements to foster sustainable growth and inclusive economic participation.' }
+] }" x-init="setInterval(() => current = (current + 1) % slides.length, 7000)" class="relative h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden bg-secondary">
+
+  <!-- Slides -->
+  <template x-for="(slide, index) in slides" :key="index">
+    <div class="absolute inset-0 transition-all duration-1000 ease-in-out"
+         :class="current === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'">
+      <div class="absolute inset-0 bg-cover bg-center" :style="'background-image: url(' + slide.image + ')'"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-secondary/85 via-secondary/70 to-secondary/50"></div>
+    </div>
+  </template>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-2xl">
+        <template x-for="(slide, index) in slides" :key="index">
+          <div x-show="current === index" x-transition:enter="transition ease-out duration-700 delay-300" x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
+              <i data-lucide="award" class="w-3.5 h-3.5 mr-1.5"></i> B-BBEE Verification Agency
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <span x-text="slide.title"></span><br>
+              <span class="text-primary" x-text="slide.highlight"></span>
+            </h1>
+            <p class="mt-6 text-lg text-gray-300 leading-relaxed max-w-xl" x-text="slide.text"></p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="what-we-offer.php" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-lg hover:bg-primary-hover transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5">
+                View Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="contact.php" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200">
+                Contact Us
+              </a>
             </div>
-        </div><!-- Header Top One End -->
-        
-
-		
-		<!-- Header Lower -->
-<div class="header-lower">
-    <div class="main-box">
-        <div class="auto-container">
-            <div class="outer-container clearfix">
-                <!--Logo Box-->
-                <div class="logo-box">
-                    <div class="logo"><a href="index.php" title="Tallinn"><img src="images/logo.png" alt="Tallinn" title="Tallinn"></a></div>
-                </div>
-                
-                <!--Nav Outer-->
-                <div class="nav-outer clearfix">
-                    <!-- Main Menu -->
-                    <nav class="main-menu">
-                        <div class="navbar-header">
-                            <!-- Toggle Button -->    	
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        
-                        <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation clearfix">
-                                <li class="current"><a href="index.php">Home</a></li>
-                                <li class="dropdown"><a href="#">About</a>
-                                    <ul>
-                                        <li><a href="company-overview.html">Company Overview</a></li>
-                                     </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Services</a>
-                                    <ul>
-                                        <li><a href="what-we-offer.html">What We Offer</a></li>
-                                        <li><a href="our-process.html">Our Process</a></li>
-                                    </ul>
-                                </li>                                <li class="dropdown"><a href="#">Statements</a>
-<ul>
-                                        <li><a href="impartiality-statement.html">Impartiality Statement</a></li>
-                                        <li><a href="appeals-and-complaints-statement.html">Appeals and Complaints Statement</a></li>
-                                        <li><a href="appeals-procedure.html">Appeals Procedure</a></li>
-                                        <li><a href="popia-statement.html">POPIA Statement</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">BEE Information</a>
-                                    <ul>
-                                        <li><a href="bee-codes.html">B-BBEE Codes</a></li>
-                                        <li><a href="explanatory-notes.html">Explanatory Notes</a></li>
-                                        <li><a href="bee-act-and-amendments.html">B-BBEE Act and Amendments</a></li>
-                                        <li><a href="affidavits.html">Affidavits</a></li>
-                                    </ul>
-                                </li>
-																<li><a href="faqs.html">FAQs</a></li>
-
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </nav><!-- Main Menu End-->
-					<!--Quote Button-->
-                            <div class="quote-btn-outer">
-                            	<a href="contact.html" class="theme-btn quote-btn">Build With AKANI</a>
-                            </div>
-                </div><!--Nav Outer End-->
-            </div>    
-        </div>
+          </div>
+        </template>
+      </div>
     </div>
-</div>
+  </div>
 
-<!--Sticky Header-->
-<div class="sticky-header">
-    <div class="auto-container clearfix">
-        <!--Logo-->
-        <div class="logo pull-left">
-            <a href="index.php" class="img-responsive" title="Tallinn"><img src="images/logo-small.png" alt="Tallinn" title="Tallinn"></a>
-        </div>
-        
-        <!--Right Col-->
-        <div class="right-col pull-right">
-            <!-- Main Menu -->
-            <nav class="main-menu">
-                <div class="navbar-header">
-                    <!-- Toggle Button -->    	
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                
-                <div class="navbar-collapse collapse clearfix">
-                   <ul class="navigation clearfix">
-                                <li class="current"><a href="index.php">Home</a></li>
-                                <li class="dropdown"><a href="#">About</a>
-                                    <ul>
-                                        <li><a href="company-overview.html">Company Overview</a></li>
-                                     </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Services</a>
-                                    <ul>
-                                        <li><a href="what-we-offer.html">What We Offer</a></li>
-                                        <li><a href="our-process.html">Our Process</a></li>
-                                    </ul>
-                                </li>                                <li class="dropdown"><a href="#">Statements</a>
-<ul>
-                                        <li><a href="impartiality-statement.html">Impartiality Statement</a></li>
-                                        <li><a href="appeals-and-complaints-statement.html">Appeals and Complaints Statement</a></li>
-                                        <li><a href="appeals-procedure.html">Appeals Procedure</a></li>
-                                        <li><a href="popia-statement.html">POPIA Statement</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">BEE Information</a>
-                                    <ul>
-                                        <li><a href="bee-codes.html">B-BBEE Codes</a></li>
-                                        <li><a href="explanatory-notes.html">Explanatory Notes</a></li>
-                                        <li><a href="bee-act-and-amendments.html">B-BBEE Act and Amendments</a></li>
-                                        <li><a href="affidavits.html">Affidavits</a></li>
-                                    </ul>
-                                </li>
-																<li><a href="faqs.html">FAQs</a></li>
+  <!-- Slide Indicators -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+    <template x-for="(slide, index) in slides" :key="'dot-'+index">
+      <button @click="current = index" class="w-2.5 h-2.5 rounded-full transition-all duration-300"
+              :class="current === index ? 'bg-primary w-8' : 'bg-white/40 hover:bg-white/60'"
+              :aria-label="'Go to slide ' + (index + 1)"></button>
+    </template>
+  </div>
 
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                </div>
-            </nav><!-- Main Menu End-->
-        </div>
-    </div>
-</div><!--End Sticky Header-->
-
-</header>
-<!--End Main Header -->
-
-		
-<style>
-
-/* Keyframes for the iris in effect */
-@keyframes irisIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}	
-	
-		/* Main Slider Styles */
-.main-slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 800px; /* Adjust height as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 800px; /* Adjust as needed */
-}
-
-.slider-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 2s ease-in-out; /* Smooth transition for the opacity */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-.slider-item.active {
-    opacity: 1;
-    z-index: 2; /* Ensure the active slide is above the others */
-}
-
-/* Ensure the first slide is shown when the page loads */
-.slider-item:first-of-type {
-    opacity: 1;
-    z-index: 1; /* Lower than the .active z-index to ensure smooth transition */
-}
-
-
-.slider-item:first-child {
-    display: block; /* Show the first slide */
-}
-
-/* Slider Overlay */
-.slider-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
-}
-
-/* Slider Content */
-.slider-content {
-    position: relative;
-    text-align: center;
-    color: #fff;
-}
-
-/* Navigation Arrows */
-.slider-arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1050; /* Ensure arrows are above the slider content */
-}
-
-.slider-arrow.left {
-    left: 30px;
-}
-
-.slider-arrow.right {
-    right: 30px;
-}
-
-/* Button Styles */
-.btn-style-one, .btn-style-two {
-    /* Add your button styles here */
-    text-decoration: none;
-    color: #fff;
-    background-color: #ce9b01; /* Example button color */
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-
-	</style>
-    
-	<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var currentIndex = 0;
-    var slides = document.querySelectorAll('.slider-item');
-    var totalSlides = slides.length;
-
-    // Initially show the first slide with animation
-    slides[currentIndex].style.display = 'block';
-    setTimeout(() => slides[currentIndex].style.opacity = '1', 10); // Slight delay to trigger animation
-
-    document.querySelector('.slider-arrow.left').addEventListener('click', function() {
-        changeSlide(false);
-    });
-
-    document.querySelector('.slider-arrow.right').addEventListener('click', function() {
-        changeSlide(true);
-    });
-
-    function changeSlide(next) {
-        slides[currentIndex].style.opacity = '0'; // Fade out current slide
-        setTimeout(function() { // Wait for fade out to complete
-            slides[currentIndex].style.display = 'none';
-            currentIndex = next ? (currentIndex + 1) % totalSlides : (currentIndex - 1 + totalSlides) % totalSlides;
-            slides[currentIndex].style.display = 'block';
-            setTimeout(() => slides[currentIndex].style.opacity = '1', 10); // Slight delay to trigger iris in effect
-        }, 1000); // Match the duration of the fade out effect
-    }
-});
-</script>
-
-
-	<!-- Main Slider -->
-<section class="main-slider" style="position: relative; overflow: hidden; width: 100%; height: 800px;">
-    <div class="slider-wrapper">
-        <!-- Slider Item 1 -->
-        <div class="slider-item" style="background-image: url('images/main-slider/2.png'); display: block;">
-            <div class="slider-overlay"></div>
-            <div class="slider-content"><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>ACCELERATE YOUR GROWTH <br><span style="color: #ce9b01;">WITH B-BBEE VERIFICATIONS</span></h2>
-                <p>Enhance your business' competitive edge with comprehensive B-BBEE verifications. <br> Our tailored approach suits businesses of all sizes, ensuring optimal strategies for your financial year's achievements.</p>
-                <a href="services.html" class="btn btn-style-one">VIEW SERVICES</a>
-            </div>
-        </div>
-        
-        <!-- Slider Item 2 -->
-        <div class="slider-item" style="background-image: url('images/main-slider/3.png'); display: none;">
-            <div class="slider-overlay"></div>
-            <div class="slider-content"><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <h2>ENHANCE <span style="color: #ce9b01;">YOUR STRATEGY</span><br> WITH EVIDENCE COLLATION</h2>
-                <p>Maximize your B-BBEE scorecard through expert guidance in evidence collation. <br>Let us simplify the submission process for your verification audit, focusing on strategic compliance and performance.</p>
-                <a href="services.html" class="btn btn-style-one">VIEW SERVICES</a>
-                <a href="contact.html" class="btn btn-style-two">CONTACT US</a>
-            </div>
-        </div>
-        
-        <!-- Slider Item 3 -->
-<div class="slider-item" style="background-image: url('images/main-slider/1.png'); display: none;">
-    <div class="slider-overlay"></div>
-    <div class="slider-content"><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <h2>STRATEGIZE FOR THE FUTURE <br><span style="color: #ce9b01;">WITH OUR GAP ANALYSIS</span></h2>
-<p>Enhance your strategy with our gap analysis, focusing on Enterprise and Supplier Development.<br> We guide you through essential improvements to foster sustainable growth and inclusive economic participation.</p>        <a href="contact.html" class="btn btn-style-one">LEARN MORE</a>
-    </div>
-</div>
-
-		
-    </div>
-    <div class="slider-arrow left" style="position: absolute; top: 50%; left: 30px; font-size: 24px; color: #fff; cursor: pointer; transform: translateY(-50%);">&#10094;</div>
-    <div class="slider-arrow right" style="position: absolute; top: 50%; right: 30px; font-size: 24px; color: #fff; cursor: pointer; transform: translateY(-50%);">&#10095;</div>
+  <!-- Navigation Arrows -->
+  <button @click="current = (current - 1 + slides.length) % slides.length" class="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-xl bg-white/10 glass flex items-center justify-center text-white hover:bg-white/20 transition-all" aria-label="Previous slide">
+    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+  </button>
+  <button @click="current = (current + 1) % slides.length" class="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-xl bg-white/10 glass flex items-center justify-center text-white hover:bg-white/20 transition-all" aria-label="Next slide">
+    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+  </button>
 </section>
 
+<!-- About Section -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
+      <!-- Left: Content -->
+      <div>
+        <span class="text-primary text-sm font-semibold tracking-wider uppercase">About Us</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-secondary">Together WE Build</h2>
+        <div class="mt-2 w-16 h-1 bg-primary rounded-full"></div>
+        <p class="mt-6 text-lg font-medium text-secondary/80">AKANI BEE Ratings (Pty) Ltd is a 51% Black owned B-BBEE verification agency.</p>
+        <p class="mt-4 text-muted-foreground leading-relaxed">We are rapidly evolving through adapting to relentless changing business challenges. We conduct B-BBEE business in accordance with regulatory requirements. Our values are rooted in quality service delivery, value addition, and time consciousness whilst retaining impartiality and integrity in the end-to-end process. As a Level 2 Rating agency, our experienced and professional team guarantees seamless verification processes with constant feedback to our clients to keep them in the loop on the project.</p>
+        <a href="company-overview.php" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-hover transition-all duration-200 shadow-sm hover:shadow-md">
+          Read More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
 
-  <section class="about-section">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!--Left Column-->
-            <div class="left-column col-md-6 col-sm-12 col-xs-12">
-                <!--Title-->
-                <div class="sec-title">
-                    <div class="floated-text">akani</div>
-                    <h2>Together WE Build</h2>
-                </div>
-                
-                <!--Company Overview Content-->
-                <div class="content">
-                    <div class="bold-text">AKANI BEE Ratings (Pty) Ltd is a 51% Black owned B-BBEE verification agency.</div>
-                    <div class="text">We are rapidly evolving through adapting to relentless changing business challenges. We conduct B-BBEE business in accordance with regulatory requirements. Our values are rooted in quality service delivery, value addition, and time consciousness whilst retaining impartiality and integrity in the end-to-end process. As a Level 2 Rating agency, our experienced and professional team guarantees seamless verification processes with constant feedback to our clients to keep them in the loop on the project.</div>
-                    <a href="company-overview.html" class="theme-btn btn-style-one">Read More</a>
-                </div>
-            </div>
-            
-            <!--Right Column-->
-            <div class="right-column col-md-6 col-sm-12 col-xs-12">
-                <div class="row clearfix">
-                   
-                    <!--Value Box: Professionalism-->
-                    <div class="service-box-one col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="fas fa-briefcase"></i></div>
-                            <h3>Professionalism</h3>
-                            <div class="text">We adhere to professional morals and best practices in verifications.</div>
-                        </div>
-                    </div>
-                    <!--Value Box: Quality-->
-                    <div class="service-box-one col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="fas fa-award"></i></div>
-                            <h3>Quality</h3>
-                            <div class="text">Our endeavor is to deliver excellent and high-quality verification services.</div>
-                        </div>
-                    </div>
-                    <!--Value Box: Client Focus-->
-                    <div class="service-box-one col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="fas fa-users"></i></div>
-                            <h3>Client Focus</h3>
-                            <div class="text">By putting the needs and interests of clients first, we build together.</div>
-                        </div>
-                    </div>
-					
-					 <!--Value Box: Integrity-->
-                    <div class="service-box-one col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box">
-                            <div class="icon-box"><i class="fas fa-handshake"></i></div>
-                            <h3>Integrity</h3>
-                            <div class="text">We uphold high ethical standards fueled by honesty, trustworthiness, and transparency in all our activities.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Right: Value Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- Card: Professionalism -->
+        <div class="group rounded-xl border border-border bg-white p-6 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            <i data-lucide="briefcase" class="w-6 h-6 text-primary"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary">Professionalism</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed">We adhere to professional morals and best practices in verifications.</p>
         </div>
+
+        <!-- Card: Quality -->
+        <div class="group rounded-xl border border-border bg-white p-6 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-primary"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary">Quality</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Our endeavor is to deliver excellent and high-quality verification services.</p>
+        </div>
+
+        <!-- Card: Client Focus -->
+        <div class="group rounded-xl border border-border bg-white p-6 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            <i data-lucide="users" class="w-6 h-6 text-primary"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary">Client Focus</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed">By putting the needs and interests of clients first, we build together.</p>
+        </div>
+
+        <!-- Card: Integrity -->
+        <div class="group rounded-xl border border-border bg-white p-6 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+            <i data-lucide="handshake" class="w-6 h-6 text-primary"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-secondary">Integrity</h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed">We uphold high ethical standards fueled by honesty, trustworthiness, and transparency.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<hr>
-
-	
- <!--What We Do Section-->
-    <section class="what-we-do">
-    	<div class="auto-container">
-        	<!--Title-->
-            <div class="sec-title centered">
-                <div class="floated-text">Services</div>
-                <h2>WHAT WE DO</h2>
-            </div>
-            <br> <br><br>
-            <div class="outer">
-            	<!--Logo-->
-                <div class="logo"><a href="index.php"><img src="images/logo-4.png" alt=""></a></div>
-                
-                <div class="row clearfix">
-                    <!--Left Column-->
-                    <div class="left-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        
-                        <!--Service Box-->
-                        <div class="service-box-three">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="fas fa-award"></i></div>
-                        <h3><a href="services.html">B-BBEE Verifications</a></h3>
-								<div class="text"> Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. </div>
-                            </div>
-                        </div>
-                        
-                    
-                      <br> <br> 
-                   
-                        
-                    </div>
-                    
-                    <!--Right Column-->
-                    <div class="right-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        
-                        <!--Service Box-->
-                        <div class="service-box-four">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
-                                <h3><a href="services.html">BEE Training and Insights</a></h3>
-                        <div class="text">Podcasts and training sessions to help you understand the dynamics around BEE and gain better knowledge of the Codes.</div>
-                    
-                            </div>
-                        </div>
-                    
-                       <br> <br>  
-                        
-                    
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    
-	
-	
-       
-<!--Fun Facts Section -->
-<section class="fun-facts-section" style="background-image:url(images/background/image-4.png);">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!--Column for Integrity-->
-            <div class="column count-box col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <div class="icon-box"><i class="fas fa-handshake"></i></div> <!-- Real Font Awesome Icon -->
-                    <div class="content">
-                        <div class="counter-title"><h3><strong>Integrity</strong></h3></div>
-                     </div>
-                </div>
-            </div>
-            
-            <!--Column for Professionalism-->
-            <div class="column count-box col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <div class="icon-box"><i class="fas fa-user-tie"></i></div> <!-- Real Font Awesome Icon -->
-                    <div class="content">
-                        <div class="counter-title"><h3><strong>Professionalism</strong></h3></div>
-                     </div>
-                </div>
-            </div>
-            
-            <!--Column for Quality-->
-            <div class="column count-box col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <div class="icon-box"><i class="fas fa-medal"></i></div> <!-- Real Font Awesome Icon -->
-                    <div class="content">
-                        <div class="counter-title"><h3><strong>Quality</strong></h3></div>
-                     </div>
-                </div>
-            </div>
-            
-            <!--Column for Client Focus-->
-            <div class="column count-box col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="inner">
-                    <div class="icon-box"><i class="fas fa-users"></i></div> <!-- Real Font Awesome Icon -->
-                    <div class="content">
-                        <div class="counter-title"><h3><strong>Client Focus</strong></h3></div>
-                     </div>
-                </div>
-            </div>
-        </div>
+<!-- Services Section -->
+<section class="py-20 bg-muted">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-primary text-sm font-semibold tracking-wider uppercase">Our Services</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-secondary">What We Do</h2>
+      <div class="mt-3 w-16 h-1 bg-primary rounded-full mx-auto"></div>
     </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Service Card: Verifications -->
+      <div class="group relative rounded-2xl bg-white border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+        <div class="p-8">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <i data-lucide="shield-check" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold text-secondary">B-BBEE Verifications</h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+          <a href="what-we-offer.php" class="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors">
+            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Card: Training -->
+      <div class="group relative rounded-2xl bg-white border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+        <div class="p-8">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+            <i data-lucide="presentation" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-bold text-secondary">BEE Training and Insights</h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">Podcasts and training sessions to help you understand the dynamics around BEE and gain better knowledge of the Codes.</p>
+          <a href="what-we-offer.php" class="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-primary hover:text-primary-hover transition-colors">
+            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <hr>
-    <!--Get Quote Section-->
-
-	
-	<section class="get-quote-section" style="background-image:url(images/background/image-1.png);">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!--Form Column-->
-            <div class="form-column col-lg-7 col-md-8 col-sm-12 col-xs-12">
-                <!--Title-->
-                <div class="sec-title light">
-                    <h2>GET IN TOUCH</h2>
-                </div>
-        <p align="center">                <div class="form-box default-form">
-                    <form method="post" action="sendmail.php">
-                        <div class="row clearfix">
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <div class="field-inner"><input type="text" name="name" value="" placeholder="Name" required></div>
-                            </div>
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <div class="field-inner"><input type="email" name="email" value="" placeholder="Email" required></div>
-                            </div>
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <div class="field-inner"><input type="text" name="phone" value="" placeholder="Phone" required></div>
-                            </div>
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                <div class="field-inner">
-                                    <select class="custom-select-box" name="service_type">
-                                        <option>Service Type</option>
-                                        <option>B-BBEE Verifications</option>
-                                        <option>Evidence Collation</option>
-                                        <option>BEE Training and Insights</option>
-                                        <option>Gap Analysis</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <div class="field-inner"><textarea name="message" placeholder="Message"></textarea></div>
-                            </div>
-                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <div class="field-inner"><button type="submit" class="theme-btn btn-style-one">Submit Now</button></div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-				</p>
-
-            </div>
+<!-- Values Banner Section -->
+<section class="relative py-16 overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/background/image-4.png')"></div>
+  <div class="absolute inset-0 bg-secondary/90"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="handshake" class="w-8 h-8 text-primary"></i>
         </div>
+        <h3 class="text-lg font-bold text-white">Integrity</h3>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white">Professionalism</h3>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="medal" class="w-8 h-8 text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white">Quality</h3>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="users" class="w-8 h-8 text-primary"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white">Client Focus</h3>
+      </div>
     </div>
+  </div>
 </section>
 
-    
-    
-    
-    
-    <!--Main Footer-->
-    <footer class="main-footer footer-style-two">
-    	<!--Widgets Section-->
-    	<div class="widgets-section">
-        	<div class="auto-container">
-                
-                <div class="row clearfix">
-                    <!--Footer Column-->
-                    <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-widget about-widget">
-                        	<h2>WHat is AKani?</h2>
-                            <div class="widget-content">
-                                <div class="text">AKANI is a Tsonga word/name meaning Building together. Our mission therefore follows the same philosophy
-“Together WE Build”
+<!-- Contact Form Section -->
+<section class="relative py-20 overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/background/image-1.png')"></div>
+  <div class="absolute inset-0 bg-secondary/90"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto lg:mx-0">
+      <span class="text-primary text-sm font-semibold tracking-wider uppercase">Let's Connect</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-bold text-white">Get In Touch</h2>
+      <div class="mt-2 w-16 h-1 bg-primary rounded-full"></div>
 
-</div>
-                                <ul class="social-links">
-                           <li><a href="twitter.com/"><i class="fab fa-twitter-square"></i></a></li>
-                            <li><a href="linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
-                                 </ul>
-                            </div>
-                        </div>
-                    </div><!--End Footer Column-->
-                    
-                    <!--Footer Column-->
-                    <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                        <div class="footer-widget contact-widget">
-                            <h2>Contact Us</h2>
-                            <div class="widget-content">
-                                <ul class="contact-info">
-                                    <li><div class="icon"><span class="flaticon-support"></span></div></li>
-                                    <li>Suite 002, Ground Floor, Block A
-11 Naivasha Street
-Sunninghill, Sandton
-2191
-</li>
-                                    <li>+27 83 459 1583 </li>
-                                    <li>info@akanibee.co.za </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!--End Footer Column-->
-                    
-                    <!--Footer Column-->
-                   <div class="footer-column col-md-4 col-sm-12 col-xs-12">
-    <div class="footer-widget newsletter-widget">
-        <h2>Contact me</h2>
-        <div class="widget-content">
-            <div class="text">Let us contact you, Leave us your email address.</div>
-            <div class="newsletter-form">
-                <form method="post" action="contact-me.php">
-                    <div class="form-group">
-                        <input type="email" name="email" value="" placeholder="Your Email ..." required>
-                        <button type="submit" class="send-btn"><span class="fas fa-paper-plane"></span></button>
-                    </div>
-                </form>
+      <!-- CossUI Form Card -->
+      <div class="mt-10 rounded-2xl bg-white/10 glass border border-white/10 p-8 lg:p-10">
+        <form method="post" action="sendmail.php" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- CossUI Field: Name -->
+            <div class="coss-field">
+              <label for="name" class="coss-label coss-label--light">Name</label>
+              <div class="coss-input-wrapper coss-input-wrapper--dark">
+                <input type="text" id="name" name="name" placeholder="Your full name" required
+                  class="coss-input coss-input--dark">
+              </div>
             </div>
-        </div>
+            <!-- CossUI Field: Email -->
+            <div class="coss-field">
+              <label for="email" class="coss-label coss-label--light">Email</label>
+              <div class="coss-input-wrapper coss-input-wrapper--dark">
+                <input type="email" id="email" name="email" placeholder="you@company.com" required
+                  class="coss-input coss-input--dark">
+              </div>
+            </div>
+            <!-- CossUI Field: Phone -->
+            <div class="coss-field">
+              <label for="phone" class="coss-label coss-label--light">Phone</label>
+              <div class="coss-input-wrapper coss-input-wrapper--dark">
+                <input type="text" id="phone" name="phone" placeholder="+27 ..." required
+                  class="coss-input coss-input--dark">
+              </div>
+            </div>
+            <!-- CossUI Field: Service Type -->
+            <div class="coss-field">
+              <label for="service_type" class="coss-label coss-label--light">Service Type</label>
+              <div class="coss-input-wrapper coss-input-wrapper--dark">
+                <select id="service_type" name="service_type" class="coss-select coss-select--dark">
+                  <option value="">Select a service</option>
+                  <option value="B-BBEE Verifications">B-BBEE Verifications</option>
+                  <option value="Evidence Collation">Evidence Collation</option>
+                  <option value="BEE Training and Insights">BEE Training and Insights</option>
+                  <option value="Gap Analysis">Gap Analysis</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- CossUI Field: Message -->
+          <div class="coss-field">
+            <label for="message" class="coss-label coss-label--light">Message</label>
+            <div class="coss-input-wrapper coss-input-wrapper--dark">
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs..."
+                class="coss-textarea coss-textarea--dark"></textarea>
+            </div>
+            <p class="coss-field-description text-gray-500">Optional. Describe what you need help with.</p>
+          </div>
+          <!-- CossUI Button -->
+          <button type="submit" class="coss-btn coss-btn--default coss-btn--lg">
+            <i data-lucide="send" class="w-4 h-4"></i> Submit Now
+          </button>
+        </form>
+      </div>
     </div>
-</div><!--End Footer Column-->
+  </div>
+</section>
 
-                    
-                </div>
-            </div>
-        </div>
-        
-        <!--Footer Bottom-->
-        <div class="footer-bottom">
-        	<div class="auto-container">
-            	<div class="copyright-text">Copyright &copy; 2024. All Rights Reserved By Akani BEE Ratings.</div>
-            </div>
-        </div>
-    </footer>
-    
-</div>
+<?php include 'includes/footer.php'; ?>
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
-
-
-<script src="js/jquery.js"></script> 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/revolution.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/script.js"></script>
 </body>
-
- </html>
+</html>

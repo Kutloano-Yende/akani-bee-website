@@ -4,6 +4,22 @@ RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Redirect old .html pages to new .php pages
+RewriteRule ^company-overview\.html$ company-overview.php [L,R=301]
+RewriteRule ^what-we-offer\.html$ what-we-offer.php [L,R=301]
+RewriteRule ^our-process\.html$ our-process.php [L,R=301]
+RewriteRule ^services\.html$ services.php [L,R=301]
+RewriteRule ^contact\.html$ contact.php [L,R=301]
+RewriteRule ^faqs\.html$ faqs.php [L,R=301]
+RewriteRule ^impartiality-statement\.html$ impartiality-statement.php [L,R=301]
+RewriteRule ^appeals-and-complaints-statement\.html$ appeals-and-complaints-statement.php [L,R=301]
+RewriteRule ^appeals-procedure\.html$ appeals-procedure.php [L,R=301]
+RewriteRule ^popia-statement\.html$ popia-statement.php [L,R=301]
+RewriteRule ^bee-codes\.html$ bee-codes.php [L,R=301]
+RewriteRule ^explanatory-notes\.html$ explanatory-notes.php [L,R=301]
+RewriteRule ^bee-act-and-amendments\.html$ bee-act-and-amendments.php [L,R=301]
+RewriteRule ^affidavits\.html$ affidavits.php [L,R=301]
+
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php74” package as the default “PHP” programming language.
 <IfModule mime_module>

@@ -1,0 +1,42 @@
+<?php
+// Usage: $page_title, $page_subtitle, $breadcrumbs (array of ['label'=>'', 'url'=>''])
+// $hero_bg (optional background image)
+$hero_bg = isset($hero_bg) ? $hero_bg : 'images/background/bg-page-title-1.png';
+?>
+<section class="relative overflow-hidden bg-secondary">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('<?= $hero_bg ?>')"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/70"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-3xl animate-fade-in">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight"><?= $page_title ?></h1>
+      <?php if (isset($page_subtitle)): ?>
+        <p class="mt-4 text-lg text-gray-300"><?= $page_subtitle ?></p>
+      <?php endif; ?>
+
+      <!-- Breadcrumbs -->
+      <?php if (isset($breadcrumbs) && !empty($breadcrumbs)): ?>
+      <nav class="mt-6 flex items-center gap-2 text-sm" aria-label="Breadcrumb">
+        <a href="index.php" class="text-gray-400 hover:text-primary transition-colors">Home</a>
+        <?php foreach ($breadcrumbs as $crumb): ?>
+          <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gray-600"></i>
+          <?php if (isset($crumb['url'])): ?>
+            <a href="<?= $crumb['url'] ?>" class="text-gray-400 hover:text-primary transition-colors"><?= $crumb['label'] ?></a>
+          <?php else: ?>
+            <span class="text-primary font-medium"><?= $crumb['label'] ?></span>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </nav>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <!-- Bottom Wave -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+      <path d="M0 60V30C240 10 480 0 720 10C960 20 1200 40 1440 30V60H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
