@@ -12,7 +12,7 @@
 <?php
 $page_title = 'POPIA Statement';
 $page_subtitle = 'Our commitment to protecting your personal information.';
-$breadcrumbs = [['label' => 'Statements', 'url' => '#'], ['label' => 'POPIA Statement']];
+$breadcrumbs = [['label' => 'Statements'], ['label' => 'POPIA Statement']];
 $hero_bg = 'images/background/bg-page-title-1-popia.png';
 include 'includes/page-hero.php';
 ?>

@@ -11,11 +11,15 @@
 <?php include 'includes/header.php'; ?>
 
 <!-- Hero Slider Section -->
-<section x-data="{ current: 0, slides: [
+<section x-data="{ current: 0, paused: false, slides: [
   { image: 'images/main-slider/2.png', title: 'Accelerate Your Growth', highlight: 'With B-BBEE Verifications', text: 'Enhance your business\' competitive edge with comprehensive B-BBEE verifications. Our tailored approach suits businesses of all sizes, ensuring optimal strategies for your financial year\'s achievements.' },
   { image: 'images/main-slider/3.png', title: 'Enhance Your Strategy', highlight: 'With Evidence Collation', text: 'Maximize your B-BBEE scorecard through expert guidance in evidence collation. Let us simplify the submission process for your verification audit, focusing on strategic compliance and performance.' },
   { image: 'images/main-slider/1.png', title: 'Strategize for the Future', highlight: 'With Our Gap Analysis', text: 'Enhance your strategy with our gap analysis, focusing on Enterprise and Supplier Development. We guide you through essential improvements to foster sustainable growth and inclusive economic participation.' }
-] }" x-init="setInterval(() => current = (current + 1) % slides.length, 7000)" class="relative h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden bg-secondary">
+] }" x-init="
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => { if (!paused) current = (current + 1) % slides.length }, 7000)
+  }
+" class="relative h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden bg-secondary" aria-roledescription="carousel" aria-label="Featured services">
 
   <!-- Slides -->
   <template x-for="(slide, index) in slides" :key="index">
@@ -54,8 +58,12 @@
     </div>
   </div>
 
-  <!-- Slide Indicators -->
+  <!-- Slide Indicators + Pause Control -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+    <button @click="paused = !paused" class="w-8 h-8 rounded-full bg-white/10 glass flex items-center justify-center text-white hover:bg-white/20 transition-all" :aria-label="paused ? 'Play carousel' : 'Pause carousel'">
+      <i data-lucide="pause" x-show="!paused" class="w-3.5 h-3.5"></i>
+      <i data-lucide="play" x-show="paused" x-cloak class="w-3.5 h-3.5"></i>
+    </button>
     <template x-for="(slide, index) in slides" :key="'dot-'+index">
       <button @click="current = index" class="w-2.5 h-2.5 rounded-full transition-all duration-300"
               :class="current === index ? 'bg-primary w-8' : 'bg-white/40 hover:bg-white/60'"

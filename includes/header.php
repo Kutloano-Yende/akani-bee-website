@@ -52,8 +52,8 @@ $cp = $current_page !== basename($_SERVER['PHP_SELF']) ? $current_page : $curren
         <a href="index.php" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors <?= isActive('index', $cp) ?>">Home</a>
 
         <!-- About Dropdown -->
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-          <button class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['company-overview'], $cp) ?>">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape.prevent="open = false" @focusout="if (!$el.contains($event.relatedTarget)) open = false" class="relative">
+          <button @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" aria-haspopup="true" :aria-expanded="open" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['company-overview'], $cp) ?>">
             About <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'"></i>
           </button>
           <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute left-0 mt-1 w-56 rounded-xl border border-border bg-white shadow-xl p-1.5">
@@ -62,8 +62,8 @@ $cp = $current_page !== basename($_SERVER['PHP_SELF']) ? $current_page : $curren
         </div>
 
         <!-- Services Dropdown -->
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-          <button class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['what-we-offer','our-process','services'], $cp) ?>">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape.prevent="open = false" @focusout="if (!$el.contains($event.relatedTarget)) open = false" class="relative">
+          <button @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" aria-haspopup="true" :aria-expanded="open" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['what-we-offer','our-process','services'], $cp) ?>">
             Services <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'"></i>
           </button>
           <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" class="absolute left-0 mt-1 w-56 rounded-xl border border-border bg-white shadow-xl p-1.5">
@@ -73,8 +73,8 @@ $cp = $current_page !== basename($_SERVER['PHP_SELF']) ? $current_page : $curren
         </div>
 
         <!-- Statements Dropdown -->
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-          <button class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['impartiality-statement','appeals-and-complaints-statement','appeals-procedure','popia-statement'], $cp) ?>">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape.prevent="open = false" @focusout="if (!$el.contains($event.relatedTarget)) open = false" class="relative">
+          <button @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" aria-haspopup="true" :aria-expanded="open" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['impartiality-statement','appeals-and-complaints-statement','appeals-procedure','popia-statement'], $cp) ?>">
             Statements <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'"></i>
           </button>
           <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" class="absolute left-0 mt-1 w-64 rounded-xl border border-border bg-white shadow-xl p-1.5">
@@ -86,8 +86,8 @@ $cp = $current_page !== basename($_SERVER['PHP_SELF']) ? $current_page : $curren
         </div>
 
         <!-- BEE Information Dropdown -->
-        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
-          <button class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['bee-codes','explanatory-notes','bee-act-and-amendments','affidavits'], $cp) ?>">
+        <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @keydown.escape.prevent="open = false" @focusout="if (!$el.contains($event.relatedTarget)) open = false" class="relative">
+          <button @click="open = !open" @keydown.enter.prevent="open = !open" @keydown.space.prevent="open = !open" aria-haspopup="true" :aria-expanded="open" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 <?= isDropdownActive(['bee-codes','explanatory-notes','bee-act-and-amendments','affidavits'], $cp) ?>">
             BEE Information <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform" :class="open && 'rotate-180'"></i>
           </button>
           <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" class="absolute left-0 mt-1 w-64 rounded-xl border border-border bg-white shadow-xl p-1.5">

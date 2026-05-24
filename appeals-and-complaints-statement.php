@@ -11,7 +11,7 @@
 
 <?php
 $page_title = 'Appeals & Complaints Statement';
-$breadcrumbs = [['label' => 'Statements', 'url' => '#'], ['label' => 'Appeals & Complaints']];
+$breadcrumbs = [['label' => 'Statements'], ['label' => 'Appeals & Complaints']];
 $hero_bg = 'images/background/bg-page-title-1-complaint.png';
 include 'includes/page-hero.php';
 ?>
@@ -35,7 +35,7 @@ include 'includes/page-hero.php';
           <h3 class="text-lg font-bold text-secondary pt-2">Appeals</h3>
         </div>
         <p class="text-muted-foreground leading-relaxed text-justify">
-          At AKANI BEE Ratings, we are committed to upholding the highest standards of impartiality, integrity, and fairness in all our verification activities. We understand that stakeholders may occasionally have concerns or disputes related to verification decisions or outcomes. To ensure transparency and provide a fair avenue for resolving such concerns, the Rating Agency has established an Appeals Procedure (MAN107) which allows our clients and stakeholders to submit formal appeals or complaints regarding verification decisions or any matter related to the verification process. The procedure involves a thorough and independent review of the appeal by our Appeals Review Committee (ARC). The ARP consists of individuals who were not directly involved in the original verification process, ensuring an objective and unbiased assessment. To submit an appeal, please contact our Verification Manager at <a href="mailto:appeals@akanibee.co.za" class="text-primary hover:underline font-medium">appeals@akanibee.co.za</a>.
+          At AKANI BEE Ratings, we are committed to upholding the highest standards of impartiality, integrity, and fairness in all our verification activities. We understand that stakeholders may occasionally have concerns or disputes related to verification decisions or outcomes. To ensure transparency and provide a fair avenue for resolving such concerns, the Rating Agency has established an Appeals Procedure (MAN107) which allows our clients and stakeholders to submit formal appeals or complaints regarding verification decisions or any matter related to the verification process. The procedure involves a thorough and independent review of the appeal by our Appeals Review Committee (ARC). The ARC consists of individuals who were not directly involved in the original verification process, ensuring an objective and unbiased assessment. To submit an appeal, please contact our Verification Manager at <a href="mailto:appeals@akanibee.co.za" class="text-primary hover:underline font-medium">appeals@akanibee.co.za</a>.
         </p>
       </div>
 
@@ -48,7 +48,7 @@ include 'includes/page-hero.php';
           <h3 class="text-lg font-bold text-secondary pt-2">Complaints</h3>
         </div>
         <p class="text-muted-foreground leading-relaxed text-justify">
-          We are dedicated to maintaining the highest level of impartiality, integrity, and professionalism in all our verification activities. AKANI BEE understands that clients and related parties may have complaints related to our services. To ensure that complaints are addressed promptly and fairly, our procedure allows our clients and stakeholders to submit formal complaints about any aspect of our services or any potential non-conformities. As a responsive and accountable agency, we encourage you to bring any complaint to our attention, as it presents an opportunity for us to continuously improve and uphold our commitment to impartiality and excellence. We value the feedback of our clients and stakeholders and take all complaints seriously. Your input is instrumental in helping us improve our services and adherence verification principles. To submit a complaint, please contact our Verification Manager at <a href="mailto:complaints@akanibee.co.za" class="text-primary hover:underline font-medium">complaints@akanibee.co.za</a>.
+          We are dedicated to maintaining the highest level of impartiality, integrity, and professionalism in all our verification activities. AKANI BEE understands that clients and related parties may have complaints related to our services. To ensure that complaints are addressed promptly and fairly, our procedure allows our clients and stakeholders to submit formal complaints about any aspect of our services or any potential non-conformities. As a responsive and accountable agency, we encourage you to bring any complaint to our attention, as it presents an opportunity for us to continuously improve and uphold our commitment to impartiality and excellence. We value the feedback of our clients and stakeholders and take all complaints seriously. Your input is instrumental in helping us improve our services and adherence to verification principles. To submit a complaint, please contact our Verification Manager at <a href="mailto:complaints@akanibee.co.za" class="text-primary hover:underline font-medium">complaints@akanibee.co.za</a>.
         </p>
       </div>
     </div>

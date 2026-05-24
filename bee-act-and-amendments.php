@@ -12,14 +12,14 @@
 <?php
 $page_title = 'B-BBEE Act & Amendments';
 $page_subtitle = 'Access the B-BBEE Act, Commissioner Practice Guide, and Verification Manual.';
-$breadcrumbs = [['label' => 'BEE Information', 'url' => '#'], ['label' => 'B-BBEE Act & Amendments']];
+$breadcrumbs = [['label' => 'BEE Information'], ['label' => 'B-BBEE Act & Amendments']];
 $hero_bg = 'images/background/bee-information.png';
 include 'includes/page-hero.php';
 
 $downloads = [
-  ['name' => 'BEE Act Gazette', 'url' => 'https://drive.usercontent.google.com/download?id=1Dcxpmq2oRD3Mw5LN6uIXrbgidKcC6BXI&export=download&authuser=0&confirm=t&uuid=2e7ade30-d6ec-40ff-b30f-935c57690e40&at=APZUnTVaDZH-NXaAOOFYjA47mdrX:1710489515853'],
-  ['name' => 'BEE Commissioner Practice Guide', 'url' => 'https://drive.usercontent.google.com/download?id=11jJCYqIYM0NCyIgu024fykTrTJx7u-GT&export=download&authuser=0&confirm=t&uuid=6e7b3ce7-632d-4a4e-87d6-2b27eaacd066&at=APZUnTWlALOYsvycjUWWBSz8hKVC:1710489656385'],
-  ['name' => 'Verification Manual', 'url' => 'https://drive.usercontent.google.com/download?id=1tBBa3uZtdUZLhc3q7JkCQ5k80swElrGV&export=download&authuser=0&confirm=t&uuid=f9e8d293-8304-44bf-b2b5-9dd646ffde3b&at=APZUnTV8HHntxRRfLe-d4rvsn-8N:1710489683327'],
+  ['name' => 'BEE Act Gazette', 'url' => 'https://drive.google.com/uc?export=download&id=1Dcxpmq2oRD3Mw5LN6uIXrbgidKcC6BXI'],
+  ['name' => 'BEE Commissioner Practice Guide', 'url' => 'https://drive.google.com/uc?export=download&id=11jJCYqIYM0NCyIgu024fykTrTJx7u-GT'],
+  ['name' => 'Verification Manual', 'url' => 'https://drive.google.com/uc?export=download&id=1tBBa3uZtdUZLhc3q7JkCQ5k80swElrGV'],
 ];
 ?>
 

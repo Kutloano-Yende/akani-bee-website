@@ -12,16 +12,16 @@
 <?php
 $page_title = 'Explanatory Notes';
 $page_subtitle = 'Download B-BBEE explanatory notes, compliance guidelines, and frameworks.';
-$breadcrumbs = [['label' => 'BEE Information', 'url' => '#'], ['label' => 'Explanatory Notes']];
+$breadcrumbs = [['label' => 'BEE Information'], ['label' => 'Explanatory Notes']];
 $hero_bg = 'images/background/bee-information.png';
 include 'includes/page-hero.php';
 
 $downloads = [
-  ['name' => 'Explanatory Notice 1 of 2019 - Submission of Info for BEE Compliancy Report', 'url' => 'https://drive.usercontent.google.com/download?id=1GSNYZsGDj2FHJSPLTL4fKxh5HTbfxXCB&export=download&authuser=0&confirm=t&uuid=7e319602-2d0b-4cab-8a00-06e0f70252e7&at=APZUnTVhk3jK8beCV6qsGQthoLX_:1710530934702'],
-  ['name' => 'SAHRC Disability Monitoring Framework and Guidelines Draft', 'url' => 'https://drive.usercontent.google.com/download?id=1huAqunuM0-imWiJ6v_hokVN1MkHXMKiL&export=download&authuser=0&confirm=t&uuid=7a49cd7a-e723-446c-b7c1-36241c48855a&at=APZUnTXlF9iogrgvahHO7vPSrpE3:1710531076633'],
-  ['name' => 'Thresholds for BEE Transactions Gazette June 2017', 'url' => 'https://drive.usercontent.google.com/download?id=1KqX8OnKupg7Ss3Nbu5ypis_kMe6SgdkB&export=download&authuser=0&confirm=t&uuid=a14b9c47-a8c5-420b-a6a9-95476ae9d675&at=APZUnTXFVJ9Wv0FIFF7dx8aMVMY7:1710530944077'],
-  ['name' => 'Explanatory Notice 1 of 2021 - Guidelines on Completion of Compliance Matrix', 'url' => 'https://drive.usercontent.google.com/download?id=14XAyRgf1i9cqn2P0_YMXJS69ufpGUXNz&export=download&authuser=0&confirm=t&uuid=d801ad6b-4524-4d27-bcdf-3ec634aaaa5d&at=APZUnTWaFfBPSwgCtUSDhBRuNQz8:1710530936821'],
-  ['name' => 'Explanatory Notice 2 of 2021 - Guidelines on Completion of Compliance Matrix', 'url' => 'https://drive.usercontent.google.com/download?id=14XAyRgf1i9cqn2P0_YMXJS69ufpGUXNz&export=download&authuser=0&confirm=t&uuid=d801ad6b-4524-4d27-bcdf-3ec634aaaa5d&at=APZUnTWaFfBPSwgCtUSDhBRuNQz8:1710530936821'],
+  ['name' => 'Explanatory Notice 1 of 2019 - Submission of Info for BEE Compliancy Report', 'url' => 'https://drive.google.com/uc?export=download&id=1GSNYZsGDj2FHJSPLTL4fKxh5HTbfxXCB'],
+  ['name' => 'SAHRC Disability Monitoring Framework and Guidelines Draft', 'url' => 'https://drive.google.com/uc?export=download&id=1huAqunuM0-imWiJ6v_hokVN1MkHXMKiL'],
+  ['name' => 'Thresholds for BEE Transactions Gazette June 2017', 'url' => 'https://drive.google.com/uc?export=download&id=1KqX8OnKupg7Ss3Nbu5ypis_kMe6SgdkB'],
+  ['name' => 'Explanatory Notice 1 of 2021 - Guidelines on Completion of Compliance Matrix', 'url' => 'https://drive.google.com/uc?export=download&id=14XAyRgf1i9cqn2P0_YMXJS69ufpGUXNz'],
+  ['name' => 'Explanatory Notice 2 of 2021 - Guidelines on Completion of Compliance Matrix', 'url' => 'https://drive.google.com/uc?export=download&id=14XAyRgf1i9cqn2P0_YMXJS69ufpGUXNz'],
 ];
 ?>
 

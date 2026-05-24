@@ -5,15 +5,15 @@ $hero_bg = isset($hero_bg) ? $hero_bg : 'images/background/bg-page-title-1.png';
 ?>
 <section class="relative overflow-hidden bg-secondary">
   <!-- Background Image -->
-  <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('<?= $hero_bg ?>')"></div>
+  <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('<?= htmlspecialchars($hero_bg, ENT_QUOTES, 'UTF-8') ?>')"></div>
   <div class="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/70"></div>
 
   <!-- Content -->
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
     <div class="max-w-3xl animate-fade-in">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight"><?= $page_title ?></h1>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight"><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></h1>
       <?php if (isset($page_subtitle)): ?>
-        <p class="mt-4 text-lg text-gray-300"><?= $page_subtitle ?></p>
+        <p class="mt-4 text-lg text-gray-300"><?= htmlspecialchars($page_subtitle, ENT_QUOTES, 'UTF-8') ?></p>
       <?php endif; ?>
 
       <!-- Breadcrumbs -->
@@ -23,9 +23,9 @@ $hero_bg = isset($hero_bg) ? $hero_bg : 'images/background/bg-page-title-1.png';
         <?php foreach ($breadcrumbs as $crumb): ?>
           <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gray-600"></i>
           <?php if (isset($crumb['url'])): ?>
-            <a href="<?= $crumb['url'] ?>" class="text-gray-400 hover:text-primary transition-colors"><?= $crumb['label'] ?></a>
+            <a href="<?= htmlspecialchars($crumb['url'], ENT_QUOTES, 'UTF-8') ?>" class="text-gray-400 hover:text-primary transition-colors"><?= htmlspecialchars($crumb['label'], ENT_QUOTES, 'UTF-8') ?></a>
           <?php else: ?>
-            <span class="text-primary font-medium"><?= $crumb['label'] ?></span>
+            <span class="text-primary font-medium"><?= htmlspecialchars($crumb['label'], ENT_QUOTES, 'UTF-8') ?></span>
           <?php endif; ?>
         <?php endforeach; ?>
       </nav>

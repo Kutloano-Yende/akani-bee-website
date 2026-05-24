@@ -12,8 +12,8 @@
 <?php
 $page_title = 'Appeals Procedure';
 $page_subtitle = 'Our structured process for handling verification appeals fairly and transparently.';
-$breadcrumbs = [['label' => 'Statements', 'url' => '#'], ['label' => 'Appeals Procedure']];
-$hero_bg = 'images/background/bg-page-title-1-popia.png';
+$breadcrumbs = [['label' => 'Statements'], ['label' => 'Appeals Procedure']];
+$hero_bg = 'images/background/bg-page-title-1-complaint.png';
 include 'includes/page-hero.php';
 ?>
 

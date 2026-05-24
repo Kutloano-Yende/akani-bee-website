@@ -13,7 +13,7 @@
 <?php
 $page_title = 'What We Offer';
 $page_subtitle = 'Comprehensive B-BBEE services tailored for businesses of all sizes.';
-$breadcrumbs = [['label' => 'Services', 'url' => '#'], ['label' => 'Our Offerings']];
+$breadcrumbs = [['label' => 'Services'], ['label' => 'Our Offerings']];
 $hero_bg = 'images/background/what-we-offer.png';
 include 'includes/page-hero.php';
 ?>

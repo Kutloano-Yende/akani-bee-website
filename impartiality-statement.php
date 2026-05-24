@@ -11,7 +11,7 @@
 
 <?php
 $page_title = 'Impartiality Statement';
-$breadcrumbs = [['label' => 'Statements', 'url' => '#'], ['label' => 'Impartiality Statement']];
+$breadcrumbs = [['label' => 'Statements'], ['label' => 'Impartiality Statement']];
 $hero_bg = 'images/background/bg-page-title-1-impartiality.png';
 include 'includes/page-hero.php';
 ?>

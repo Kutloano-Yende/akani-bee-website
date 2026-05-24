@@ -5,6 +5,7 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Redirect old .html pages to new .php pages
+RewriteRule ^index\.html$ index.php [L,R=301]
 RewriteRule ^company-overview\.html$ company-overview.php [L,R=301]
 RewriteRule ^what-we-offer\.html$ what-we-offer.php [L,R=301]
 RewriteRule ^our-process\.html$ our-process.php [L,R=301]

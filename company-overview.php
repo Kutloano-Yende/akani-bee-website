@@ -13,7 +13,7 @@
 <?php
 $page_title = 'Company Overview';
 $page_subtitle = 'Learn about our mission, vision, and the values that drive Akani BEE Ratings.';
-$breadcrumbs = [['label' => 'About', 'url' => '#'], ['label' => 'Company Overview']];
+$breadcrumbs = [['label' => 'About'], ['label' => 'Company Overview']];
 $hero_bg = 'images/background/bg-page-title-1.png';
 include 'includes/page-hero.php';
 ?>

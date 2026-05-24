@@ -13,7 +13,7 @@
 <?php
 $page_title = 'Our Process';
 $page_subtitle = 'A structured approach ensuring seamless B-BBEE verification from start to finish.';
-$breadcrumbs = [['label' => 'Services', 'url' => '#'], ['label' => 'Our Process']];
+$breadcrumbs = [['label' => 'Services'], ['label' => 'Our Process']];
 $hero_bg = 'images/background/process-bg.png';
 include 'includes/page-hero.php';
 ?>
