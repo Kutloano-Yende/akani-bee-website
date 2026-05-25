@@ -7,7 +7,11 @@
 <meta name="geo.placename" content="Sandton, Johannesburg">
 <meta name="geo.position" content="-26.0367;28.0611">
 <meta name="ICBM" content="-26.0367, 28.0611">
-<link rel="canonical" href="https://akanibee.co.za/<?= basename($_SERVER['PHP_SELF']) === 'index.php' ? '' : basename($_SERVER['PHP_SELF']) ?>">
+<?php
+  $canonical_path = basename($_SERVER['SCRIPT_NAME'] ?? 'index.php');
+  $canonical_suffix = ($canonical_path === 'index.php') ? '' : $canonical_path;
+?>
+<link rel="canonical" href="https://akanibee.co.za/<?= htmlspecialchars($canonical_suffix, ENT_QUOTES, 'UTF-8') ?>">
 <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 <link rel="dns-prefetch" href="https://unpkg.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">

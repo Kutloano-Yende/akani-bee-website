@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include 'includes/head.php'; ?>
-<title>B-BBEE Act & Amendments | Legislation Downloads | Akani BEE Ratings</title>
+<title>B-BBEE Act & Amendments | Downloads | Akani BEE Ratings</title>
 <meta name="description" content="Download the B-BBEE Act, gazette amendments, BEE Commissioner Practice Guide, and verification manual for compliance.">
 <meta name="keywords" content="B-BBEE Act, BEE Act South Africa, B-BBEE amendments, BEE legislation, BEE Commissioner Practice Guide, BEE verification manual">
 <meta property="og:title" content="B-BBEE Act & Amendments | Legislation Downloads">

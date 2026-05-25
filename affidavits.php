@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php include 'includes/head.php'; ?>
-<title>B-BBEE Affidavit Templates | EME & QSE Downloads | Akani BEE Ratings</title>
+<title>B-BBEE Affidavit Templates | EME & QSE | Akani BEE Ratings</title>
 <meta name="description" content="Download free B-BBEE affidavit templates for EME and QSE entities across general, agriculture, construction, finance & ICT sectors.">
 <meta name="keywords" content="B-BBEE affidavit template, EME affidavit download, QSE affidavit, BEE affidavit South Africa, difference between affidavit and BEE certificate">
 <meta property="og:title" content="B-BBEE Affidavit Templates | EME & QSE Downloads">
