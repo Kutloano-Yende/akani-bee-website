@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["email"])) {
         $message = "You have a new contact request from: $email";
 
         if (send_smtp_mail($subject, $message, $email)) {
-            echo "<script>alert('Thank you for your email. We will be in touch soon.'); window.location.href='index.php';</script>";
+            header("Location: thank-you.php");
+            exit;
         } else {
             echo "<script>alert('There was a problem with your submission, please try again or email info@akanibee.co.za.'); window.history.back();</script>";
         }

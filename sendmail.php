@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Message:\n$message\n";
 
     if (send_smtp_mail($subject, $email_content, $email, $name)) {
-        echo "<script>alert('Thank you for your request, we will get back to you soon.'); window.location.href='index.php';</script>";
+        header("Location: thank-you.php");
+        exit;
     } else {
         echo "<script>alert('Oops! Something went wrong, please try again or email us at info@akanibee.co.za.'); window.history.back();</script>";
     }
