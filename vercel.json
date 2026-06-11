@@ -8,6 +8,8 @@
     { "src": "fonts/**", "use": "@vercel/static" },
     { "src": "downloads/**", "use": "@vercel/static" },
     { "src": "favicon.ico", "use": "@vercel/static" },
+    { "src": "*.png", "use": "@vercel/static" },
+    { "src": "site.webmanifest", "use": "@vercel/static" },
     { "src": "robots.txt", "use": "@vercel/static" },
     { "src": "sitemap.xml", "use": "@vercel/static" }
   ],
